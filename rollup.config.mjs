@@ -1,3 +1,7 @@
+import nodeResolve from '@rollup/plugin-node-resolve';
+import json from '@rollup/plugin-json';
+import commonjs from '@rollup/plugin-commonjs'; // <--- Importante para traducir CommonJS a ESM
+
 export default {
   input: 'dist/esm/index.js',
   output: [
@@ -19,4 +23,11 @@ export default {
     },
   ],
   external: ['@capacitor/core'],
+  plugins: [
+    nodeResolve({
+      preferBuiltins: false,
+    }),
+    commonjs(), // <--- Convierte las exportaciones CJS de @appsflyer-sdk/js-core-plugin a ESM
+    json(),
+  ],
 };

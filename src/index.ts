@@ -1,14 +1,16 @@
-import { AppsFlyerSDK } from '@appsflyer-sdk/js-core-plugin';
+import AppsFlyerSDKModule from '@appsflyer-sdk/js-core-plugin';
 
 import { CapacitorTransport } from './capacitor-transport';
 import { version } from './version';
 
-// Re-exports every RPC method's param/return types and the RpcTransport/RpcEvent contract.
-export * from '@appsflyer-sdk/js-core-plugin';
-// js-core-plugin does not export AFPurchaseType/MediationNetwork equivalents (Task 1 finding).
+// Manejo seguro para compatibilidad entre ESM y CJS tras la compilación de Rollup
+const AppsFlyerSDKClass = AppsFlyerSDKModule.AppsFlyerSDK || AppsFlyerSDKModule.default || AppsFlyerSDKModule;
+
+// Re-exportar tipos e interfaces usando 'export type' para evitar errores de módulos en Rollup
+export type * from '@appsflyer-sdk/js-core-plugin';
 export * from './constants';
 
-const AppsFlyer = new AppsFlyerSDK(new CapacitorTransport(), {
+const AppsFlyer = new AppsFlyerSDKClass(new CapacitorTransport(), {
   plugin: 'capacitor',
   pluginVersion: version,
 });
