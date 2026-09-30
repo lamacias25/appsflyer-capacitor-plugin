@@ -33,9 +33,9 @@ jobs:
           ref: ${{ inputs.ref }}
 
       - name: Setup Node.js
-        uses: actions/setup-node@v7
+        uses: actions/setup-node@v4
         with:
-          node-version: '24'
+          node-version: 22.x
 
       - name: Install plugin dependencies
         run: npm install

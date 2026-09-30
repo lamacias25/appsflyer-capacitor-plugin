@@ -1,6 +1,5 @@
 import UIKit
 import Capacitor
-import AppsFlyerPlugin
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -9,7 +8,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private var pendingDeepLinkURL: URL?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        AppsFlyerAttribution.shared.handleLaunchOptions(launchOptions)
         if let urlString = parseLaunchArg(name: "-deepLinkURL"),
            let url = URL(string: urlString) {
             pendingDeepLinkURL = url
