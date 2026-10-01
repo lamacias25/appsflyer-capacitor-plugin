@@ -53,6 +53,10 @@ var AppsFlyerCapacitorPlugin = (function (exports, core) {
     };
 
     const AppsFlyer = core.registerPlugin('AppsFlyerPlugin', {});
+    // Exponerlo para consumo desde JavaScript/OutSystems ODC
+    if (typeof window !== 'undefined') {
+        window.AppsFlyer = AppsFlyer;
+    }
 
     exports.AppsFlyer = AppsFlyer;
     exports.AppsFlyerConsent = AppsFlyerConsent;
