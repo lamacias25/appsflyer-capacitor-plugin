@@ -13,6 +13,6 @@ class AppsFlyerConsentClass {
 }
 export const AppsFlyerConsent = {
     forGDPRUser: AppsFlyerConsentClass.forGDPRUser,
-    forNonGDPRUser: AppsFlyerConsentClass.forNonGDPRUser,
+    forNonGDPRUser: AppsFlyerConsentClass.forNonGDPRUser
 };
 //# sourceMappingURL=appsflyer_interfaces.js.map

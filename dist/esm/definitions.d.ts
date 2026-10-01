@@ -1,6 +1,6 @@
-import type { PluginListenerHandle } from '@capacitor/core';
-import type { AFConstants } from './Appsflyer_constants';
-import type { AFAndroidInAppPurchase, AFAnonymizeUser, AFAppendToDeepLink, AFCuid, AFCurrency, AFData, AFDisable, AFEvent, AFFbDAL, AFFilters, AFHost, AFInit, AFIosInAppPurchase, AFIsStopped, AFLink, AFLinkGenerator, AFOnelinkDomain, AFOnelinkID, AFPath, AFPushPayload, AFRes, AFStop, AFUid, AFUninstall, AFUrls, AFLanguage, OnAppOpenAttribution, OnConversionDataResult, OnDeepLink, AFPromotion, AFEmails, AFLatLng, AFPhone, AFPartnerData, AFLogInvite, AFPurchaseDetailsV2, AFEnableTCFDataCollection, AFConsentData, AFAdRevenueData, AFConsentOptions, AFIsStarted } from './appsflyer_interfaces';
+import type { PluginListenerHandle } from "@capacitor/core";
+import type { AFConstants } from "./Appsflyer_constants";
+import type { AFAndroidInAppPurchase, AFAnonymizeUser, AFAppendToDeepLink, AFCuid, AFCurrency, AFData, AFDisable, AFEvent, AFFbDAL, AFFilters, AFHost, AFInit, AFIosInAppPurchase, AFIsStopped, AFLink, AFLinkGenerator, AFOnelinkDomain, AFOnelinkID, AFPath, AFPushPayload, AFRes, AFStop, AFUid, AFUninstall, AFUrls, AFLanguage, OnAppOpenAttribution, OnConversionDataResult, OnDeepLink, AFPromotion, AFEmails, AFLatLng, AFPhone, AFPartnerData, AFLogInvite, AFPurchaseDetailsV2, AFEnableTCFDataCollection, AFConsentData, AFAdRevenueData, AFConsentOptions, AFIsStarted } from "./appsflyer_interfaces";
 export interface AppsFlyerPlugin {
     addListener(eventName: AFConstants.CONVERSION_CALLBACK, listenerFunc: (event: OnConversionDataResult) => void): PluginListenerHandle;
     addListener(eventName: AFConstants.OAOA_CALLBACK, listenerFunc: (event: OnAppOpenAttribution) => void): PluginListenerHandle;
@@ -173,11 +173,11 @@ export interface AppsFlyerPlugin {
      */
     enableTCFDataCollection(shouldEnableTCFDataCollection: AFEnableTCFDataCollection): Promise<void>;
     /**
-     * Use to set user consent data manualy.
-     * if your app doesn't use a CMP compatible with TCF v2.2, use the following method to manualy provide the consent data directly to the SDK.
-     * @param  data: AppsFlyerConsent object.
-     * @deprecated deprecated since 6.16.2. Use `setConsentDataV2` instead
-     */
+    * Use to set user consent data manualy.
+    * if your app doesn't use a CMP compatible with TCF v2.2, use the following method to manualy provide the consent data directly to the SDK.
+    * @param  data: AppsFlyerConsent object.
+    * @deprecated deprecated since 6.16.2. Use `setConsentDataV2` instead
+    */
     setConsentData(data: AFConsentData): Promise<void>;
     /**
      * By attributing ad revenue, app owners gain the complete view of user LTV and campaign ROI.

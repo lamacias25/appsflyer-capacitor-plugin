@@ -1,5 +1,5 @@
 # node files
-# dist
+dist
 node_modules
 examples/CapacitorReact/android
 examples/CapacitorReact/ios
@@ -10,10 +10,6 @@ Pods
 Podfile.lock
 Build
 xcuserdata
-
-# Swift Package Manager
-.build/
-Package.resolved
 
 # macOS files
 .DS_Store
@@ -69,12 +65,11 @@ captures
 .externalNativeBuild
 package-lock.json
 
+# Cursor editor state
+.cursor/
+
 # Local environment variables (do NOT commit)
 .env
 .env.*
 examples/CapacitorReact/.env
-examples/CapacitorReact/.env.*
-# .env.example files are committed templates, never contain real secrets
-!.env.example
-!**/.env.example
-*.code-workspace
+examples/CapacitorReact/.env.*  

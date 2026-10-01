@@ -49,13 +49,15 @@ var AppsFlyerCapacitorPlugin = (function (exports, core) {
     }
     const AppsFlyerConsent = {
         forGDPRUser: AppsFlyerConsentClass.forGDPRUser,
-        forNonGDPRUser: AppsFlyerConsentClass.forNonGDPRUser,
+        forNonGDPRUser: AppsFlyerConsentClass.forNonGDPRUser
     };
 
     const AppsFlyer = core.registerPlugin('AppsFlyerPlugin', {});
 
     exports.AppsFlyer = AppsFlyer;
     exports.AppsFlyerConsent = AppsFlyerConsent;
+
+    Object.defineProperty(exports, '__esModule', { value: true });
 
     return exports;
 

@@ -1,5 +1,7 @@
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 var core = require('@capacitor/core');
 
 exports.AFConstants = void 0;
@@ -50,7 +52,7 @@ class AppsFlyerConsentClass {
 }
 const AppsFlyerConsent = {
     forGDPRUser: AppsFlyerConsentClass.forGDPRUser,
-    forNonGDPRUser: AppsFlyerConsentClass.forNonGDPRUser,
+    forNonGDPRUser: AppsFlyerConsentClass.forNonGDPRUser
 };
 
 const AppsFlyer = core.registerPlugin('AppsFlyerPlugin', {});

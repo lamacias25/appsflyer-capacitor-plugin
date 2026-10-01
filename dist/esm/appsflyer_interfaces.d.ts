@@ -1,4 +1,4 @@
-import type { MediationNetwork, AFPurchaseType } from './Appsflyer_constants';
+import type { MediationNetwork, AFPurchaseType } from "./Appsflyer_constants";
 export interface AFInit {
     devKey: string;
     appID: string;
